@@ -3,7 +3,7 @@
 echo ">>> Installing Mailcatcher"
 
 #dependency
-sudo apt-get install -y libsqlite3-dev
+sudo apt-get install -y libsqlite3-dev ruby1.9.3
 
 
 if $(which rvm) -v > /dev/null 2>&1; then
@@ -13,9 +13,10 @@ if $(which rvm) -v > /dev/null 2>&1; then
 else
 	#gem check
 	if ! gem -v > /dev/null 2>&1; then sudo aptitude install -y libgemplugin-ruby; fi
-
-	#install
-	gem install --no-rdoc --no-ri mailcatcher
+    
+  git clone https://github.com/sj26/mailcatcher.git
+  cd mailcatcher && gem build mailcatcher.gemspec
+  gem install  --no-rdoc --no-ri mailcatcher-0.5.12.gem
 fi
 
 
