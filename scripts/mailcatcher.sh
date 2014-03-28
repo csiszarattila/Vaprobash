@@ -16,7 +16,7 @@ else
     
   git clone https://github.com/sj26/mailcatcher.git
   cd mailcatcher && gem build mailcatcher.gemspec
-  gem install  --no-rdoc --no-ri mailcatcher-0.5.12.gem
+  gem install  --no-rdoc --no-ri mailcatcher-0.6.0.gem
 fi
 
 
